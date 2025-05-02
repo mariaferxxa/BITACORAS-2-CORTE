@@ -70,14 +70,34 @@ $$
 G(s) = \frac{36}{s^2 + 4.2s + 36}
 $$
 
-**Solución:**
-- $\( \omega_n = 6 \)$
-- $\( \zeta = \frac{4.2}{2 \cdot 6} = 0.35 \)$
+### Paso 1: Identificar parámetros del denominador
 
-Aplicando las fórmulas:
-- $\( t_p = \frac{\pi}{6 \sqrt{1 - 0.35^2}} \approx 0.56\,\text{s} \)$
-- $\( M_p = e^{-\frac{0.35 \pi}{\sqrt{1 - 0.35^2}}} \times 100\% \approx 38\% \)$
-- $\( t_s (2\%) \approx \frac{4}{0.35 \cdot 6} = 1.90\,\text{s} \)$
+Comparando con la forma canónica:
+
+$$
+s^2 + 2\zeta \omega_n s + \omega_n^2 = s^2 + 4.2s + 36
+$$
+
+Se deduce que:
+- $\( \omega_n = \sqrt{36} = 6 \)$
+- $\( 2 \zeta \omega_n = 4.2 \Rightarrow \zeta = \frac{4.2}{2 \cdot 6} = 0.35 \)$
+
+### Paso 2: Cálculo de parámetros temporales
+
+- **Tiempo al pico:**
+ 
+  $t_p = \frac{\pi}{\omega_n \sqrt{1 - \zeta^2}} = \frac{\pi}{6 \sqrt{1 - (0.35)^2}} \approx 0.56\,\text{s}$
+  
+
+- **Sobreimpulso:**
+
+ $M_p = e^{-\frac{\zeta \pi}{\sqrt{1 - \zeta^2}}} \times 100\% = e^{-\frac{0.35 \pi}{\sqrt{1 - (0.35)^2}}} \times 100\% \approx 38\%$
+  
+
+- **Tiempo de estabilización (2%):**
+
+  $t_s = \frac{4}{\zeta \omega_n} = \frac{4}{0.35 \cdot 6} \approx 1.90\,\text{s}$
+
 
 ## Ejercicio 2: Sistema Críticamente Amortiguado
 
