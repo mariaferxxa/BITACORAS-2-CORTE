@@ -8,15 +8,15 @@ Los sistemas de segundo orden aparecen con frecuencia en ingeniería y control a
 - **Sistemas de segundo orden:** Sistemas cuya ecuación diferencial característica incluye una derivada de segundo orden, representados por funciones de transferencia con polinomios de segundo grado en el denominador.
 > 🔑 **Función de transferencia:** Relación en el dominio de Laplace entre la salida y la entrada de un sistema lineal e invariante en el tiempo.
 
-> 🔑 **Factor de amortiguamiento $(\(\zeta\))$**: Parámetro adimensional que indica el grado de amortiguamiento de la respuesta. Define si el sistema es subamortiguado, críticamente amortiguado o sobreamortiguado.
+> 🔑 **Factor de amortiguamiento $(\zeta\)$**: Parámetro adimensional que indica el grado de amortiguamiento de la respuesta. Define si el sistema es subamortiguado, críticamente amortiguado o sobreamortiguado.
 
-> 🔑 **Frecuencia natural $(\(\omega_n\))$**: Frecuencia con la que oscilaría el sistema si no existiera amortiguamiento.
+> 🔑 **Frecuencia natural $(\omega_n\)$**: Frecuencia con la que oscilaría el sistema si no existiera amortiguamiento.
 
-> 🔑 **Sobreimpulso $(\(M_p\))$**: Porcentaje que la respuesta supera el valor en estado estacionario.
+> 🔑 **Sobreimpulso $(M_p\)$**: Porcentaje que la respuesta supera el valor en estado estacionario.
 
-> 🔑 **Tiempo al pico $(\(t_p\))$**: Tiempo que tarda la respuesta en alcanzar su primer máximo.
+> 🔑 **Tiempo al pico $(t_p\)$**: Tiempo que tarda la respuesta en alcanzar su primer máximo.
 
-> 🔑 **Tiempo de establecimiento $(\(t_s\))$**: Tiempo necesario para que la respuesta permanezca dentro de un margen específico (2% o 5%) respecto al valor final.
+> 🔑 **Tiempo de establecimiento $(t_s\)$**: Tiempo necesario para que la respuesta permanezca dentro de un margen específico (2% o 5%) respecto al valor final.
 
 ## Fundamento Teórico
 
