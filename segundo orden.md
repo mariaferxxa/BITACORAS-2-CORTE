@@ -144,6 +144,6 @@ title('Respuesta al escalón - Sistema Críticamente Amortiguado');
 ## Conclusiones
 
 - Los sistemas de segundo orden permiten predecir el comportamiento dinámico de múltiples procesos físicos.
-- El factor de amortiguamiento \( \zeta \) y la frecuencia natural \( \omega_n \) determinan la forma de la respuesta.
+- El factor de amortiguamiento $\( \zeta \)$ y la frecuencia natural $\( \omega_n \)$ determinan la forma de la respuesta.
 - Mediante el análisis en el dominio de Laplace y herramientas como MATLAB, es posible visualizar y ajustar la respuesta deseada.
 - Conocer los parámetros temporales clave permite diseñar controladores adecuados y mejorar el desempeño del sistema.
