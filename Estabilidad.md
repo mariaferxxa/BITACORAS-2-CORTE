@@ -5,10 +5,13 @@
 El análisis de estabilidad es fundamental en el diseño de sistemas de control. Un sistema estable garantiza que, ante una entrada acotada, la salida permanezca acotada y eventualmente tienda a un valor constante. Existen distintos métodos para evaluar la estabilidad de un sistema lineal e invariante en el tiempo (LTI), como el análisis de polos, el teorema del valor final y el criterio de Routh-Hurwitz.
 
 ## Palabras Clave
-- **Estabilidad asintótica:** Cuando la salida del sistema tiende a cero ante una entrada nula.
-- **Polos del sistema:** Raíces del denominador de la función de transferencia. Su ubicación determina la estabilidad.
-- **Criterio de Routh-Hurwitz:** Método algebraico que permite determinar la estabilidad de un sistema sin resolver la ecuación característica.
-- **Teorema del valor final:** Herramienta que permite calcular el valor final de la salida en régimen permanente si el sistema es estable.
+> 🔑 **Estabilidad asintótica:** Cuando la salida del sistema tiende a cero ante una entrada nula.
+> 
+> 🔑 **Polos del sistema:** Raíces del denominador de la función de transferencia. Su ubicación determina la estabilidad.
+> 
+> 🔑 **Criterio de Routh-Hurwitz:** Método algebraico que permite determinar la estabilidad de un sistema sin resolver la ecuación característica.
+> 
+> 🔑 **Teorema del valor final:** Herramienta que permite calcular el valor final de la salida en régimen permanente si el sistema es estable.
 
 ## Fundamento Teórico
 
@@ -106,6 +109,56 @@ $$
 Para que el sistema sea estable, todos los coeficientes deben ser positivos:
 
 \( K > -5 \) → Para cualquier \( K > -5 \), el sistema es **estable**.
+
+## Ejercicios
+### Ejercicio 1.
+Dada la funcion de transferencia, analizar si el sistema es estable o no
+
+$$G(s)=\frac{10}{s^{2}+2s+10}$$
+
+#### Paso 1.
+los polos del sistema se obtienen del polinomio caracteristico
+
+$$s^{2}+2s+10=0$$
+
+$$s=\frac{-2\pm \sqrt{2^{2}-4(1)(10)}}{2(1)}=\frac{-2\pm \sqrt{-36}}{2}=-1\pm 3j$$
+
+#### Paso 2.
+Al analizar los polos, se tiene que tienen parte real negativa y parte imaginaria de 3, lo que indica una respuesta oscilatoria amortiguada. lo que nos indica que el sistema es estable
+
+### Ejercicio 2.
+Diseñar un controlador proporcional que vuelva estable el sistema en lazo cerrado
+
+$$G(s)=\frac{1}{s^{3}+4s^{2}+3s-2}$$
+
+#### Paso 1.
+El sistema en lazo cerrado es:
+
+$$Go(s)=\frac{k_{p}}{s^{3}+4s^{2}+3s-2+k_{p}}$$
+
+#### Paso 2.
+Usamos el criterio de Routh-Hurwitz
+
+$${s^{3}+4s^{2}+3s+(-2+k_{p})}$$
+
+
+| Grado | Coeficientes                                                            |
+| ----- | ----------------------------------------------------------------------- |
+| s³    | 1     3                                                                 |
+| s²    | 4     K - 2                                                             |
+| s¹    | $\frac{14 - K}{4}$                                                      |
+| s⁰    | $K - 2$                                                                 |
+
+#### Paso 3.
+Ahora debemos despejar kp
+
+$$\frac{14-k_{p}}{4}\gt 0\longrightarrow k_{p}\lt 14$$
+
+$$k_{p}-2\gt 0    \longrightarrow   k_{p}\gt 2$$
+
+Tenemos que el sistema sera estable si:
+
+$$2\lt k_{p}\lt  14$$
 
 ## Conclusión
 
