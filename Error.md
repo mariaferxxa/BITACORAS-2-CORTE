@@ -2,11 +2,11 @@
 ## Introduccion
 En los sistemas de control, uno de los objetivos principales es que la salida siga con precisión una entrada de referencia. El error en estado estacionario permite evaluar cómo funciona el sistema en régimen permanente. Es fundamental analizar el error para poder diseñar sistemas precisos, confiables y estables, así como para implementar estrategias de compensación cuando sea necesario.
 ## Conceptos claves
-**Error en estado estacionario: Es la diferencia entre la entrada de referencia y la salida del sistema cuando el tiempo tiende a infinito.**
+> 🔑 **Error en estado estacionario: Es la diferencia entre la entrada de referencia y la salida del sistema cuando el tiempo tiende a infinito.**
 
-**Función de transferencia: Relación entre la salida y la entrada de un sistema lineal.**
+> 🔑 **Función de transferencia: Relación entre la salida y la entrada de un sistema lineal.**
 
-**Constante de error: Parámetros que permiten calcular el error en estado estacionario para distintos tipos de entrada.**
+> 🔑 **Constante de error: Parámetros que permiten calcular el error en estado estacionario para distintos tipos de entrada.**
 ## Funcion de error
 La función de error en el dominio de Laplace se define como:
 
@@ -87,6 +87,63 @@ $$\lim _{s \to 0} \frac{1}{s\frac{5}{s+1}}=\frac{1}{\frac{5(0)}{0+1}}=\frac{1}{0
 
 ## Sensibilidad
 La sensibilidad en control automático mide qué tanto afecta una perturbación o cambio en los parámetros del sistema a la respuesta del mismo, especialmente al error en estado estacionario. 
+
+## Ejercicios
+### Ejercicio 1.
+Se tiene un sistema con la siguiente funcion de transferencia en lazo abierto:
+
+$$G(s)=\frac{5(s+3)}{s(s+2)(s+4)}$$
+
+Se desea calcular el error en estado estacionario para una entrada parabólica unitaria
+
+#### Paso 1.
+La entrada correspondiente es:
+
+$$R(s)=\frac{1}{s^{3}}$$
+
+#### Paso 2.
+El sistema es de tipo 1, por lo cual usamos la forma
+
+$$E=\lim_{s \to 0}\frac{1}{{s^{2}G(s)}}$$
+
+#### Paso 3. 
+Calculamos
+
+$$E=\lim_{s \to 0}\frac{1}{{s^{2}\frac{5(s+3)}{s(s+2)(s+4)}}}=\lim_{s \to 0}\frac{1}{{s\frac{5s(s+3)}{(s+2)(s+4)}}}$$
+
+$$\frac{1}{{\frac{5(0)((0)+3)}{((0)+2)((0)+4)}}}$$
+
+$$\frac{1}{{\frac{0}{8}}}=\frac{1}{0}=\infty $$
+
+Entonces el error en etsado estacionario para una entrada parabolica es infinito, lo que indica que el sistema no puede seguir esta señal sin añadir un controlador 
+
+### Ejercicio 2.
+Para el siguiente sistema diseñar un controlador en lazo cerrado que garantice un error de posicion menor a 15%
+
+$$G=\frac{s+8}{(s-3)(s+5)}$$
+
+#### Paso 1.
+Se realiza el lazo cerrado
+
+$$Essp=\frac{1}{1+\frac{k_{p}(s+8)}{(s^{2}+2s-15}}$$
+
+#### Paso 2.
+Calculamos el error
+
+$$Essp=\frac{1}{1+\frac{k_{p}(s+8)}{(s^{2}+2s-15}}=\frac{1}{1+\frac{k_{p}(0+8)}{(0^{2}+0s-15)}}$$
+
+$$=\frac{1}{1+\frac{8k_{p}}{-15}}=\frac{1}{\frac{-15+8k_{p}}{-15}}=\frac{-15}{-15+8k_{p}}$$
+
+#### Paso 3. 
+Luego de calcular el error, procedemos a despejar kp
+
+$$\left| \frac{-15}{-15+8k_{p}} \right|\le 0.15$$
+
+$$\left| -15 \right|\le 1.5k_{p}-2.25$$
+
+$$k_{p}\ge \frac{-2.25+15}{1.2} \to k_{p}\ge 10.63$$
+
+Se necesita un controlador de 10.63
 
 ## Conclusiones
 La función de sensibilidad refleja la capacidad del sistema para rechazar perturbaciones y adaptarse a cambios, y se relaciona directamente con el error en estado estacionario.
