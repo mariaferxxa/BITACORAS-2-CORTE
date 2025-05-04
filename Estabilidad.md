@@ -58,6 +58,10 @@ $$
 
 Ambos polos están en el semiplano izquierdo → sistema **estable**.
 
+$$G(s)=\frac{5}{s^{2}+4}$$
+
+Polos en s=±2j → parte real cero.
+Sistema **marginalmente estable** 
 ## Criterio de Routh-Hurwitz
 
 Permite determinar la estabilidad observando la primera columna de la tabla de Routh sin calcular los polos.
